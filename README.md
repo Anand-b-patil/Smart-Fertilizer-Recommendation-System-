@@ -88,7 +88,5 @@ Feel free to fork this repo and submit pull requests. Contributions are welcome!
 
 ```
 
----
 
-Would you like this as a file you can directly upload, or should I also generate the `requirements.txt` next?
-```
+
