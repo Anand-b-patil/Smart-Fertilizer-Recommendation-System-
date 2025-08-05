@@ -53,7 +53,7 @@ You can start with:
 ## 🔧 Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/SmartFertilizerRecommendation.git
+git clone https://github.com/Anand-b-patil/SmartFertilizerRecommendation.git
 cd SmartFertilizerRecommendation
 pip install -r requirements.txt
 ````
@@ -87,6 +87,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Feel free to fork this repo and submit pull requests. Contributions are welcome!
 
 ```
+
 
 
 
