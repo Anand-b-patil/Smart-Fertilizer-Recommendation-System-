@@ -12,20 +12,6 @@ A comprehensive hybrid fertilizer recommendation system that combines rule-based
 
 
 
-## Installation
-
-1. Install required packages:
-```bash
-pip install -r requirements.txt
-```
-
-2. Run the system:
-```bash
-python app.py
-```
-
-
-
 ## Supported Crops
 
 - Maize, Rice, Paddy, Wheat, Cotton
@@ -72,6 +58,31 @@ python app.py
 - **ML model accuracy**: ~92%
 - **Combined confidence scoring**: High/Medium/Low
 
+## Installation
+
+1. Install required packages:
+```bash
+pip install -r requirements.txt
+```
+
+2. Run the system:
+```bash
+python app.py
+```
+##Input Parameters
+```
+| Parameter       | Type      | Range/Options                             | Description         |
+| --------------- | --------- | ----------------------------------------- | ------------------- |
+| Temperature     | Slider    | 10°C – 40°C                               | Ambient temperature |
+| Humidity        | Slider    | 10% – 100%                                | Relative humidity   |
+| Moisture        | Slider    | 0% – 100%                                 | Soil moisture level |
+| Nitrogen (N)    | Number    | 0 – 100 mg/kg                             | Nitrogen content    |
+| Phosphorous (P) | Number    | 0 – 100 mg/kg                             | Phosphorous content |
+| Potassium (K)   | Number    | 0 – 100 mg/kg                             | Potassium content   |
+| Soil Type       | Selectbox | Sandy, Loamy, Clayey, Black, Red, Other   | Type of soil        |
+| Crop Type       | Selectbox | Maize, Wheat, Rice, Cotton, Barley, Other | Type of crop        |
+```
+
 ## Contributing
 
 1. Fork the repository
@@ -87,4 +98,5 @@ This project is licensed under the MIT License.
 ## Contact
 
 For questions or support, please create an issue in the repository.
+
 
