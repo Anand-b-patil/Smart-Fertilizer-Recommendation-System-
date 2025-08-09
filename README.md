@@ -10,19 +10,7 @@ A comprehensive hybrid fertilizer recommendation system that combines rule-based
 - **Batch Processing**: Support for multiple farm predictions
 - **Feature Engineering**: Advanced soil health and environmental stress indicators
 
-## Project Structure
 
-```
-fertilizer_recommendation_system/
-├── config.py                 # Configuration data (fertilizer NPK, crop requirements)
-├── rule_engine.py            # Rule-based recommendation logic
-├── data_generator.py         # Dataset creation and feature engineering
-├── ml_model.py              # Machine learning model (Random Forest)
-├── fertilizer_recommender.py # Main hybrid recommendation system
-├── main.py                  # Example usage and demonstration
-├── requirements.txt         # Required Python packages
-└── README.md               # This documentation
-```
 
 ## Installation
 
@@ -33,58 +21,10 @@ pip install -r requirements.txt
 
 2. Run the system:
 ```bash
-python main.py
+python app.py
 ```
 
-## Usage
 
-### Basic Usage
-
-```python
-from fertilizer_recommender import FertilizerRecommender
-
-# Initialize the system
-recommender = FertilizerRecommender()
-
-# Train the system (required for ML validation)
-recommender.train_system()
-
-# Make a prediction
-result = recommender.predict(
-    temperature=28,      # °C
-    humidity=60,         # %
-    moisture=45,         # %
-    nitrogen=15,         # kg/ha in soil
-    phosphorous=20,      # kg/ha in soil
-    potassium=25,        # kg/ha in soil
-    soil_type='Loamy',   # Soil type
-    crop_type='Maize'    # Crop type
-)
-
-print(f"Recommended Fertilizer: {result['primary_recommendation']}")
-print(f"Application Rate: {result['application_rate_kg_per_ha']} kg/ha")
-```
-
-### Detailed Report
-
-```python
-# Generate comprehensive report
-report = recommender.generate_report(28, 60, 45, 15, 20, 25, 'Loamy', 'Maize')
-print(report)
-```
-
-### Batch Processing
-
-```python
-# Process multiple farms
-farms_data = [
-    (28, 60, 45, 15, 20, 25, 'Loamy', 'Maize'),
-    (32, 55, 40, 80, 15, 30, 'Black', 'Wheat'),
-    (30, 65, 50, 25, 45, 15, 'Red', 'Cotton')
-]
-
-results = recommender.batch_predict(farms_data)
-```
 
 ## Supported Crops
 
@@ -147,3 +87,4 @@ This project is licensed under the MIT License.
 ## Contact
 
 For questions or support, please create an issue in the repository.
+
