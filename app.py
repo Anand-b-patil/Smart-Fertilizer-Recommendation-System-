@@ -1,6 +1,6 @@
 import streamlit as st
 
-from improved_fertilizer_recommender import ImprovedFertilizerRecommender
+from fertilizer_recommender import ImprovedFertilizerRecommender
 
 recommender = ImprovedFertilizerRecommender()
 
