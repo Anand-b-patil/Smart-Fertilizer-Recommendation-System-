@@ -69,7 +69,7 @@ pip install -r requirements.txt
 ```bash
 python app.py
 ```
-##Input Parameters
+## Input Parameters
 ```
 | Parameter       | Type      | Range/Options                             | Description         |
 | --------------- | --------- | ----------------------------------------- | ------------------- |
@@ -98,5 +98,6 @@ This project is licensed under the MIT License.
 ## Contact
 
 For questions or support, please create an issue in the repository.
+
 
 
