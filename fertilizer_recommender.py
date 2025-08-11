@@ -29,10 +29,9 @@ class ImprovedFertilizerRecommender:
         self.model = None
         self.encoders = {}
 
+#Primary recommendation method based on agricultural science
+
     def rule_based_recommendation(self, nitrogen, phosphorous, potassium, crop_type):
-        '''
-        Primary recommendation method based on agricultural science
-        '''
         needs = self.crop_requirements.get(crop_type, {'N': 100, 'P': 50, 'K': 50})
         n_deficit = max(0, needs['N'] - nitrogen)
         p_deficit = max(0, needs['P'] - phosphorous) 
@@ -55,10 +54,10 @@ class ImprovedFertilizerRecommender:
         else:
             return '17-17-17'
 
+#Generate training data with proper agricultural relationships
     def create_logical_dataset(self, n_samples=5000):
-        '''
-        Generate training data with proper agricultural relationships
-        '''
+       
+       
         np.random.seed(42)
         data = []
 
@@ -96,10 +95,10 @@ class ImprovedFertilizerRecommender:
             })
         return pd.DataFrame(data)
 
+#Create meaningful features for ML model
+
     def engineer_features(self, df):
-        '''
-        Create meaningful features for ML model
-        '''
+       
         enhanced_df = df.copy()
         enhanced_df['Soil_Health_Index'] = (enhanced_df['Nitrogen'] + 
                                             enhanced_df['Phosphorous'] + 
@@ -119,10 +118,9 @@ class ImprovedFertilizerRecommender:
                                         labels=['Low', 'Medium', 'High'])
         return enhanced_df
 
+#Prepare data for machine learning
     def prepare_data(self, df):
-        '''
-        Prepare data for machine learning
-        '''
+        
         df_enhanced = self.engineer_features(df)
         categorical_cols = ['Soil Type', 'Crop Type', 'N_Level', 'P_Level', 'K_Level']
         for col in categorical_cols:
@@ -175,11 +173,11 @@ class ImprovedFertilizerRecommender:
         print(f"ML model accuracy: {ml_accuracy:.4f} ({ml_accuracy*100:.2f}%)")
         return rule_accuracy, ml_accuracy
 
+#Make fertilizer recommendation using hybrid approach
+
     def predict(self, temperature, humidity, moisture, nitrogen, phosphorous, 
                 potassium, soil_type, crop_type):
-        '''
-        Make fertilizer recommendation using hybrid approach
-        '''
+       
         rule_recommendation = self.rule_based_recommendation(
             nitrogen, phosphorous, potassium, crop_type
         )
@@ -212,10 +210,11 @@ class ImprovedFertilizerRecommender:
             'explanation': self._get_explanation(nitrogen, phosphorous, potassium, crop_type)
         }
 
+#Provide explanation for the recommendation
+
     def _get_explanation(self, nitrogen, phosphorous, potassium, crop_type):
-        '''
-        Provide explanation for the recommendation
-        '''
+        
+        
         needs = self.crop_requirements.get(crop_type, {'N': 100, 'P': 50, 'K': 50})
         n_deficit = max(0, needs['N'] - nitrogen)
         p_deficit = max(0, needs['P'] - phosphorous)
